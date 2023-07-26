@@ -84,6 +84,11 @@ const TicketCard = ({ ticket, currentUser }) => {
                     src="https://hackap.ir/wp-content/uploads/2021/04/profile.png"
                     alt="infamous"
                   /> */}
+                  <img
+                      className="h-12 w-12 rounded-full object-cover"
+                      src={currentUser?.profileURL}
+                      alt="infamous"
+                    />
 
                   <div className="flex flex-col ml-6">
                     <span className="text-lg font-bold">{ticket.subject}</span>

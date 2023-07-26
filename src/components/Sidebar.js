@@ -23,6 +23,11 @@ const Sidebar = ({ currentUser, role, setTicketsReady }) => {
           src="https://hackap.ir/wp-content/uploads/2021/04/profile.png"
           alt="mickey mouse Profile"
         /> */}
+            <img
+          className="h-16 w-16 rounded-full object-cover mt-4"
+          src={currentUser?.profileURL}
+          alt="mickey mouse Profile"
+        />
         <span
           className="mt-2 mb-6 transition
 				duration-500 ease-in-out"
