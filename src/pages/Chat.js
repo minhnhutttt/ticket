@@ -43,7 +43,6 @@ const Chat = ({ currentUser }) => {
             ticketID={ticketID}
               subject={subject}
               name={name}
-              owner={owner}
               email={email}
               message={message}
               status={status}

@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from 'react-router-dom';
 import {
   Modal,
   ModalHeader,
@@ -10,8 +9,7 @@ import {
 // Firebase
 import { problemSolving } from "../../firebase.util";
 import { useState } from "react";
-const ChatSidebar = ({ ticketID, subject, name, owner, email, message, status }) => {
-  const history = useHistory();
+const ChatSidebar = ({ ticketID, subject, name,  email, message, status }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   function openModal() {
     setIsModalOpen(true);
@@ -44,13 +42,13 @@ const ChatSidebar = ({ ticketID, subject, name, owner, email, message, status })
             <h2 className="font-bold">Status</h2>
             <div className="flex ml-5">
             <div
-                            className={`flex w-32 text-center justify-center items-center
-                            rounded-full
-                            py-2 px-6 leading-none
-                             select-none capitalize ${status === 'closed' ? 'bg-gray-300 text-black/80' : 'bg-green-500 text-white  '}`}
-                          >
-                            <span>{status}</span>
-                          </div>
+                  className={`flex w-32 text-center justify-center items-center
+                  rounded-full
+                  py-2 px-6 leading-none
+                    select-none capitalize ${status === 'closed' ? 'bg-gray-300 text-black/80' : 'bg-green-500 text-white  '}`}
+                >
+                  <span>{status}</span>
+                </div>
             </div>
           </div>
           <div className="flex ml-5">
