@@ -31,12 +31,8 @@ const LoginForm = () => {
   return (
     <div>
       <Alert className="w-1/2 center-alert" type="info">
-        User 1: <strong>Email:</strong> user@user.com <strong>Password:</strong>{" "}
+        User: <strong>Email:</strong> user@user.com <strong>Password:</strong>{" "}
         user@user.com
-      </Alert>
-      <Alert className="mt-3 w-1/2 center-alert" type="info">
-        User 2: <strong>Email:</strong> user2@user.com{" "}
-        <strong>Password:</strong> user2@user.com
       </Alert>
       <Alert className="mt-3 w-1/2 center-alert" type="warning">
         Admin: <strong>Email:</strong> admin@admin.com{" "}
