@@ -79,11 +79,11 @@ const TicketCard = ({ ticket, currentUser }) => {
             <div className="flex flex-row mt-2">
               <div className={classString}>
                 <div className="flex">
-                  <img
+                  {/* <img
                     className="h-12 w-12 rounded-full object-cover"
                     src="https://hackap.ir/wp-content/uploads/2021/04/profile.png"
                     alt="infamous"
-                  />
+                  /> */}
 
                   <div className="flex flex-col ml-6">
                     <span className="text-lg font-bold">{ticket.subject}</span>
