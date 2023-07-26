@@ -144,6 +144,22 @@ export const updateProfileImage = async (imgURL, uid) => {
     });
 };
 
+export const problemSolving = async (ticketID) => {
+  await db
+    .collection("tickets")
+    .doc(ticketID)
+    .update({
+      status: "closed",
+    })
+    .then(() => {
+      NotificationManager.success("Ticket Successfully Deleted", "Success");
+      window.location.href = "/tickets";
+    })
+    .catch(() => {
+      NotificationManager.error("Something Went Wrong", "Error", 5000);
+    });
+};
+
 export const deleteTicket = (ticketID) => {
   db.collection("tickets")
     .doc(ticketID)

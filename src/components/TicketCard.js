@@ -110,10 +110,10 @@ const TicketCard = ({ ticket, currentUser }) => {
                       >
                         <div className="flex">
                           <div
-                            className="flex w-32 text-center justify-center items-center
-										rounded-full
-										py-2 px-6 leading-none
-										 select-none text-white bg-green-500"
+                            className={`flex w-32 text-center justify-center items-center
+                            rounded-full
+                            py-2 px-6 leading-none
+                             select-none capitalize ${ticket.status === 'closed' ? 'bg-gray-300 text-black/80' : 'bg-green-500 text-white  '}`}
                           >
                             <span>{ticket.status}</span>
                           </div>
