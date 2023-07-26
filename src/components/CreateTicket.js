@@ -30,6 +30,7 @@ const CreateTicket = ({ currentUser }) => {
       subject: subject,
       email: email,
       message: message,
+      status: 'open',
     };
     if (errors.length) {
       errors.map((err) => NotificationManager.error(err, "Error", 5000));

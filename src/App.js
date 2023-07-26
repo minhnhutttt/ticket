@@ -108,7 +108,7 @@ function App({ setCurrentUser, currentUser }) {
               // Declaring chat page url with url params , Don't show the route to not logged in users
               <Route
                 path={
-                  "/profile/:ticketID/:subject/:name/:owner/:email/:message"
+                  "/profile/:ticketID/:subject/:name/:owner/:email/:message/:status"
                 }
               >
                 <Chat />

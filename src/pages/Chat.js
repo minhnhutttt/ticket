@@ -19,7 +19,7 @@ const Chat = ({ currentUser }) => {
   const [areDialogsReady, setAreDialogsReady] = useState(false); // similar to areTicketsReady that we seen in App.js
 
   //Pull data of the ticker from url parameters
-  const { ticketID, subject, name, owner, email, message } = useParams();
+  const { ticketID, subject, name, owner, email, message, status } = useParams();
 
   useEffect(() => {
     getChatFromDB(ticketID).then((dialogs) => {
@@ -38,14 +38,15 @@ const Chat = ({ currentUser }) => {
           // while we are waiting to get dialogs from databse we render Spinner
           <Spinner size={28} />
         ) : (
-          <div className="flex flex-row h-full w-full lg:w-2/3 overflow-x-hidden">
+          <div className="flex flex-col h-full w-full lg:w-2/3 overflow-x-hidden">
             <ChatSidebar
               subject={subject}
               name={name}
               email={email}
               message={message}
+              status={status}
             />
-            <div className="flex flex-col flex-auto h-full p-6 w-4/5">
+            <div className="flex flex-col flex-auto h-full p-6 w-full">
               <div className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4 border-gray-400 border shadow-lg">
                 <div className="flex flex-col h-full overflow-x-auto mb-4">
                   <div className="flex flex-col h-full">

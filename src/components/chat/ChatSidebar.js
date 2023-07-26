@@ -1,21 +1,25 @@
 import React from "react";
 
-const ChatSidebar = ({ subject, name, email, message }) => {
+const ChatSidebar = ({ subject, name, email, message, status }) => {
   return (
-    <div className="flex flex-col flex-auto w-1/4 h-full p-6 break-words ">
+    <div className="flex flex-col  w-full p-6 break-words ">
       <div className="hidden md:flex flex-col flex-auto flex-shrink-0 rounded-2xl h-full p-4 text-white overflow-auto bg-gradient border-gray-400 border shadow-lg ">
-        <h1 className="text-2xl mt-10 font-bold capitalize">{subject}</h1>
-        <div className="text-xl mt-12 font-thin">
+        <h1 className="text-2xl font-bold capitalize">{subject}</h1>
+        <div className="text-xl mt-6 font-thin">
           <h2 className="font-bold">Name</h2>
           <h2>{name}</h2>
         </div>
-        <div className="text-xl mt-12 font-thin">
+        <div className="text-xl mt-6 font-thin">
           <h2 className="font-bold">Email</h2>
           <h2 className="text-base">{email} </h2>
         </div>
-        <div className="text-xl mt-12 font-thin">
+        <div className="text-xl mt-6 font-thin">
           <h2 className="font-bold">Initial Message</h2>
           <p className="text-base">{message}</p>
+        </div>
+        <div className="text-xl mt-6 font-thin">
+          <h2 className="font-bold">Status</h2>
+          <p className="text-base">{status}</p>
         </div>
       </div>
     </div>
