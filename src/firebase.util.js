@@ -123,7 +123,8 @@ export const uploadFiletoDB = (file, ticketID, uid) => {
       },
       () => {
         uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-          messageSend(ticketID, downloadURL, uid);
+          const img = `<img src="${downloadURL}" />`;
+          messageSend(ticketID, img, uid);
           NotificationManager.success("File Successfully Uploaded", "Success");
         });
       }

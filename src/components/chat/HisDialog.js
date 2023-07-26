@@ -8,7 +8,7 @@ const HisDialog = ({ message }) => {
           A
         </div>
         <div className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
-          <div>{message}</div>
+          <div dangerouslySetInnerHTML={{ __html: message}} />
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // Firebase
-import { getChatFromDB, db, deleteTicket } from "../firebase.util";
+import { getChatFromDB, db, deleteTicket, getUser } from "../firebase.util";
 
 import Spinner from "./Spinner";
 import {
@@ -67,6 +67,11 @@ const TicketCard = ({ ticket, currentUser }) => {
     // eslint-disable-next-line
   }, []);
 
+  const [avatar, setAvatar] = useState('');
+  getUser(ticket.owner).then(user =>{
+    setAvatar(user.data().profileURL)
+  })
+
   var classString =
     "flex w-5/6 mx-auto	-my-0 items-center justify-between bg-white px-8 py-6 border-indigo-500 shadow-lg ";
   classString += isTicketOpened ? " " : "border-l-4";
@@ -86,9 +91,10 @@ const TicketCard = ({ ticket, currentUser }) => {
                   /> */}
                   <img
                       className="h-12 w-12 rounded-full object-cover"
-                      src={currentUser?.profileURL}
+                      src={avatar}
                       alt="infamous"
                     />
+                    
 
                   <div className="flex flex-col ml-6">
                     <span className="text-lg font-bold">{ticket.subject}</span>
