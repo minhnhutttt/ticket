@@ -38,7 +38,7 @@ const CreateTicket = ({ currentUser }) => {
   };
   const setError = (text) => {
     errors.push(text);
-    return <HelperText valid={false}>{text}</HelperText>;
+    return '';
   };
   const clearError = (text, errText) => {
     if (errors.length) {

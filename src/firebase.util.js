@@ -40,7 +40,7 @@ export const addTicketToDB = async (ticket, owner) => {
     .then(() => {
       // If we have stored the ticket successfully, Run notification and reload the page so we can see our new ticket in tickets list
       NotificationManager.success("Ticket Successfully added", "Success");
-      window.location.reload();
+      window.location.href = "/tickets";
     })
     .catch(() => {
       NotificationManager.error("Something Went Wrong", "Error", 5000);
@@ -50,7 +50,7 @@ export const addTicketToDB = async (ticket, owner) => {
 // Fetch all the tickets from database (for admin role)
 export const getTicketsFromDB = () => {
   var tickets = [];
-  db.collection("tickets")
+  db.collection("tickets").orderBy('createdAt', "desc")
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((ticket) => {
