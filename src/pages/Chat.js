@@ -19,7 +19,7 @@ const Chat = ({ currentUser }) => {
   const [areDialogsReady, setAreDialogsReady] = useState(false); // similar to areTicketsReady that we seen in App.js
 
   //Pull data of the ticker from url parameters
-  const { ticketID, subject, name, owner, email, message, status } = useParams();
+  const { ticketID, subject, name, email, message, status } = useParams();
 
   useEffect(() => {
     getChatFromDB(ticketID).then((dialogs) => {

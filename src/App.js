@@ -22,7 +22,6 @@ import LoginForm from "./components/LoginForm";
 //Firebse related
 import {
   getTicketsFromDB,
-  getTicketsFromDBUser,
   getUser,
   auth,
 } from "./firebase.util";
