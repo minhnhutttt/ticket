@@ -9,7 +9,7 @@ import {
 // Firebase
 import { problemSolving } from "../../firebase.util";
 import { useState } from "react";
-const ChatSidebar = ({ ticketID, subject, name,  email, message, status }) => {
+const ChatSidebar = ({ ticketID, subject, name,  email, message, status, role }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   function openModal() {
     setIsModalOpen(true);
@@ -51,17 +51,19 @@ const ChatSidebar = ({ ticketID, subject, name,  email, message, status }) => {
                 </div>
             </div>
           </div>
-          <div className="flex ml-5">
-            <button
-              onClick={openModal}
-              className="flex items-center
-                  rounded-full
-                  py-2 px-6 leading-none
-                    select-none text-white bg-red-700 capitalize "
-            >
-              <span>Close Ticket</span>
-            </button>
-          </div>
+          {role === 'admin' &&
+            <div className="flex ml-5">
+              <button
+                onClick={openModal}
+                className="flex items-center
+                    rounded-full
+                    py-2 px-6 leading-none
+                      select-none text-white bg-red-700 capitalize "
+              >
+                <span>Close Ticket</span>
+              </button>
+            </div>
+          }
         </div>
       </div>
     </div>

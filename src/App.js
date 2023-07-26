@@ -82,9 +82,7 @@ function App({ setCurrentUser, currentUser }) {
     console.log("getTickets fired");
     if (currentUser?.role) {
       // if he is admin get all of the tickets
-      currentUser?.role === "user"
-        ? setTickets(getTicketsFromDBUser(currentUser))
-        : setTickets(getTicketsFromDB());
+      setTickets(getTicketsFromDB());
     }
     // If you ger the tickets set the state so we know tickets are ready to be shown
     if (tickets) setTicketsReady(true);

@@ -32,9 +32,10 @@ const Chat = ({ currentUser }) => {
     <div className="flex h-screen antialiased text-gray-800 justify-center">
       {
         // if this is not your chat then you can't see it
-        currentUser.uid !== owner && currentUser.role === "user" ? (
-          <p>You don't have permission</p>
-        ) : !areDialogsReady ? (
+        // currentUser.uid !== owner && currentUser.role === "user" ? (
+        //   <p>You don't have permission</p>
+        // ) : 
+        !areDialogsReady ? (
           // while we are waiting to get dialogs from databse we render Spinner
           <Spinner size={28} />
         ) : (
@@ -46,6 +47,7 @@ const Chat = ({ currentUser }) => {
               email={email}
               message={message}
               status={status}
+              role={currentUser.role}
             />
             <div className="flex flex-col flex-auto h-full p-6 w-full">
               <div className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4 border-gray-400 border shadow-lg">
