@@ -56,7 +56,18 @@ export const getTicketsFromDB = () => {
       querySnapshot.forEach((ticket) => {
         tickets.push(ticket.data());
       });
+      
+    tickets.sort((a, b) => {
+      if (a.status === "open" && b.status !== "open") {
+        return -1;
+      }
+      if (a.status !== "open" && b.status === "open") {
+        return 1;
+      }
+      return 0;
     });
+    });
+
   return tickets;
 };
 
@@ -70,7 +81,7 @@ export const getTicketsFromDBUser = (user) => {
         if (ticket.data().owner === user.uid) tickets.push(ticket.data());
       });
     });
-  console.log(tickets, "tickets");
+
   return tickets;
 };
 
